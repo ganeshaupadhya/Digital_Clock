@@ -1,0 +1,40 @@
+body{
+	background-color: #d1d1d1;
+}
+
+div{
+	font-size:50px;
+}
+
+.button{
+	font-size:20px;
+	background-color: yellow;
+	height:50px;
+	width:30%;
+	border:0px solid #000000; border-radius:5px;
+       	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+}
+
+.MainScreenButton{
+	border:0px solid #000000;
+ 	border-radius:5px;
+       	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+       	background-color: #ffe657;
+	transition: 0.3s;
+}
+
+
+.div_shadhowing{
+	border:0px solid #000000;
+       	border-radius:5px;
+       	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	background-color:orange;
+}
+
+#alarm_settings{ opacity: 0.99;  border: none;}
+#Mainsettings{  opacity: 0.99;  border: none;}
+#startAlarm{ background-color: brown;opacity: 0.99;  border: none;}
+
+

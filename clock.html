@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+		<script type="text/javascript" src="functions.js"></script>
+	</head>
+
+	<body  onload="showTime(); getCookie(); ">
+
+
+		<!-- Displaying Time and Date -->
+ 	 	<div id="clock_ext" align="center" style="width:80%;margin-left:auto;margin-right:auto;">
+			<hp2 id="clock_text" style="font-size:200%;font-weight:bold;"></hp2>
+			<hp2 id="ampm_text" style="font-size:80%;font-weight:bold;"></hp2>
+			<br/>
+			<hp2 id="date_text" style="font-size:60%;font-style:italic;"></hp2>
+		</div>
+
+
+
+		<!-- Displaying Mainscreen 3  Buttons -->
+		<div align="center" style="width:90%;margin-left:auto;margin-right:auto;
+						padding:20px;margin-top:0.5%;vertical-align:middle;">
+
+
+			<input type="image" src="resources/settings.png" height="10%" width="10%" id="Settigngs_btn" 
+					class="MainScreenButton" value="Settings" onclick="ShowMainSettings()">
+
+			<input type="image" src="resources/fullscreen.png" height="10%" width="10%" id="fullscreen_btn"  
+					class="MainScreenButton" value="Full Screen" onclick="EnterFullScreen()">
+
+                	<input type="image" src="resources/alarm.png" height="10%" width="10%" id="alarm_btn"  
+					class="MainScreenButton" value="Alarm" onclick="showAlarmSettings()">
+		
+			<label id="alarmsetshow" style="font-size:50%;margin-left:auto;margin-right:auto; "></label>
+		
+		</div>
+
+
+
+		<!-- Alarm Input Screen -->
+		<div align="center" id="alarm_settings" class="div_shadhowing" style="display:none; height:300px; 
+				width:90%;margin-left:auto; margin-right:auto; margin-top:-250px;">
+
+			<form>
+				<label style="font-size:50%">Enter Alarm Time:</label>
+
+				<br/>
+
+				<input type="number" min="0" max="23" placeholder="Hour"  class="button" id="alarmtime_hour" 
+						name="alarm" style="width:10%;background-color:white;" >
+
+				<input type="number" min="0" max="59" placeholder="Minute" class="button" id="alarmtime_minute" 
+						name="alarm" style="width:10%;background-color:white;">
+			
+				<br/>
+		
+				<select id="alarm_am_pm" class="button" style="background-color:lightblue;width:20%;margin-top:10px;">
+    					<option value="am">AM</option>
+    					<option value="pm">PM</option>
+  				</select>
+				
+				<input type="button" class="button" id="setalarm_btn" 
+						value="OK" onclick="getAlarmTime()">
+				
+				<input type="button" class="button" id="cancelalarm_btn" 
+						value="Cancel" onclick="CancelAlarmTime()">
+
+				<input type="button" id="clearalarm_btn" class="button" 
+						value="OFF" onclick="OffAlarmTime()">
+			</form>
+
+		</div>
+
+
+		<!-- Alarming Screen -->
+		<div align="center" id="startAlarm" class="div_shadhowing" style="display:none; margin-top:-270px; 
+					width:90%;height:400px;margin-left:auto; margin-right:auto;">		
+
+			<audio id="alarmsong"><source src="resources/alarmsong.mp3" type="audio/mpeg"></audio>			
+			
+			<label style="color:white">Alarming</label>
+			<br/>
+
+			<label style="color:white">Now!!!</label>
+			<br/>
+
+			<img src="resources/alarming.png" height="100px" width="100px"/>
+			<br/>
+	
+			<input type="button" class="button" id="Donealarm_btn" 
+						value="Done" onclick="CloseAlarm()">
+			</br>
+			</br>
+		</div>
+
+
+		<!-- Main Settings  -->
+		<div align="center" id="Mainsettings" class="div_shadhowing" style="display:none; height:400px; 
+					width:90%;margin-left:auto; margin-right:auto; margin-top:-250px;">
+
+			<form>
+				<label style="font-size:50%">1.Select Time Format:</label>
+				<br/>
+			
+				<select id="time_format_select"  class="button" style="background-color:lightblue;width:20%;">
+    					<option value="24Hr">24Hr</option>
+    					<option value="12Hr">12Hr</option>
+  				</select>
+				<br/>
+
+				<input type="button" class="button" id="setalarm_btn" 
+						value="OK" onclick="SetTimeFormat()">
+
+				<input type="button" class="button" id="cancelalarm_btn" 
+						value="Cancel" onclick="CancelMainSettings()">
+
+			</form>
+			
+			<p style="font-size:15px"><b>v1.0.0</b><br/><i>Design & Developed By: Ganesha Upadhya<br/>
+				<br/>Icon Credits:</i><br/>
+			
+				<a style="font-size:15px" target="_blank" href="https://icons8.com/icons/set/settings">
+				Settings icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+
+				<a style="font-size:15px" target="_blank" href="https://icons8.com/icons/set/alarm-clock">
+				Alarm Clock icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+
+				<a style="font-size:15px" target="_blank" href="https://icons8.com/icons/set/expand">
+				Expand icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>	
+			</p>
+
+		</div>
+	
+		<video width="0" height="0" controls muted autoplay loop> <source src="resources/screen_activator.mp4" type="video/mp4"></video>
+
+	</body>
+
+</html>

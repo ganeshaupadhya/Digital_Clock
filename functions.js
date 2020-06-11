@@ -267,6 +267,14 @@ function SetTimeFormat()
 	timeformat = document.getElementById('time_format_select').value;
 	localStorage.setItem("timeformat", timeformat);
 	setFullScreen(document.documentElement);
+	
+	alarmstate = localStorage.getItem("alarmoff");
+	if( alarmstate == 0 )	
+	{	
+		alarmtime = localStorage.getItem("alarmTime");
+		if(alarmtime != null)
+			alarmsetshow_parser(alarmtime);
+	}
 
 }
 
